@@ -81,7 +81,7 @@ Assets {
           }
           Overrides {
             Name: "cs:GrowAmount"
-            Int: 150
+            Int: 30
           }
           Overrides {
             Name: "cs:ButtonImage:category"
@@ -165,8 +165,8 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 800
-          Height: 800
+          Width: 75
+          Height: 75
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
