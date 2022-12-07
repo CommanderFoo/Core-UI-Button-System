@@ -39,5 +39,5 @@ Assets {
     OwnerName: "CommanderFoo"
     Description: "blah"
   }
-  SerializationVersion: 119
+  SerializationVersion: 121
 }
