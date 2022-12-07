@@ -174,6 +174,17 @@ Objects {
         }
       }
     }
+    ParameterOverrideMap {
+      key: 14475387559359828896
+      value {
+        Overrides {
+          Name: "cs:Tween"
+          AssetReference {
+            Id: 5010859578220487614
+          }
+        }
+      }
+    }
     TemplateAsset {
       Id: 491768282389810091
     }
