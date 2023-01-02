@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15890731679625016125
+        ParentId: 8439019164340972673
         ChildIds: 4954124357189605708
         ChildIds: 12694488258904602806
         ChildIds: 13605223797867136028
@@ -80,8 +80,24 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:GrowAmount"
-            Int: 30
+            Name: "cs:Animate"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:GrowSize"
+            Int: 12
+          }
+          Overrides {
+            Name: "cs:AnimationTimeIn"
+            Float: 0.25
+          }
+          Overrides {
+            Name: "cs:AnimationTimeOut"
+            Float: 0.15
+          }
+          Overrides {
+            Name: "cs:Easing"
+            String: "Out_Quint"
           }
           Overrides {
             Name: "cs:ButtonImage:category"
@@ -148,7 +164,27 @@ Assets {
             String: "ButtonText"
           }
           Overrides {
-            Name: "cs:GrowAmount:subcategory"
+            Name: "cs:GrowSize:subcategory"
+            String: "Animation"
+          }
+          Overrides {
+            Name: "cs:Animate:subcategory"
+            String: "Animation"
+          }
+          Overrides {
+            Name: "cs:Easing:subcategory"
+            String: "Animation"
+          }
+          Overrides {
+            Name: "cs:AnimationTimeIn:subcategory"
+            String: "Animation"
+          }
+          Overrides {
+            Name: "cs:AnimationTimeOut:category"
+            String: "Custom"
+          }
+          Overrides {
+            Name: "cs:AnimationTimeOut:subcategory"
             String: "Animation"
           }
         }
@@ -165,13 +201,14 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 75
-          Height: 75
+          Width: 240
+          Height: 80
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
             }
           }
+          AddSizeToParentIfUsingParentSize: true
           IsHittable: true
           Button {
             FontColor {
@@ -231,7 +268,7 @@ Assets {
             }
             TargetAnchor {
               Anchor {
-                Value: "mc:euianchor:middlecenter"
+                Value: "mc:euianchor:topcenter"
               }
             }
           }
@@ -275,12 +312,12 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 12530442819506261373
+              Id: 12295576303509590270
             }
             Color {
               R: 1
-              G: 1
-              B: 1
+              G: 0.853682518
+              B: 0.16200006
               A: 1
             }
             TeamSettings {
@@ -344,12 +381,12 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 12530442819506261373
+              Id: 12295576303509590270
             }
             Color {
               R: 1
-              G: 1
-              B: 1
+              G: 0.904513836
+              B: 0.453125
               A: 1
             }
             TeamSettings {
@@ -413,12 +450,12 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 12530442819506261373
+              Id: 12295576303509590270
             }
             Color {
               R: 1
-              G: 1
-              B: 1
+              G: 0.912516534
+              B: 0.498958409
               A: 1
             }
             TeamSettings {
@@ -482,12 +519,12 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 12530442819506261373
+              Id: 12295576303509590270
             }
             Color {
-              R: 1
-              G: 1
-              B: 1
+              R: 0.480208248
+              G: 0.409945399
+              B: 0.0777937621
               A: 1
             }
             TeamSettings {
@@ -533,7 +570,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
+          Value: "mc:evisibilitysetting:forceon"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -550,6 +587,7 @@ Assets {
             }
           }
           Text {
+            Label: "ddsadsada"
             Color {
               R: 1
               G: 1
@@ -611,7 +649,7 @@ Assets {
           Overrides {
             Name: "cs:Tween"
             AssetReference {
-              Id: 841534158063459245
+              Id: 5010859578220487614
             }
           }
         }
@@ -639,15 +677,6 @@ Assets {
       }
     }
     Assets {
-      Id: 12530442819506261373
-      Name: "Fantasy Fish 003"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Food_Fish_003"
-      }
-    }
-    Assets {
       Id: 11382362097000883863
       Name: "Teko Bold"
       PlatformAssetType: 28
@@ -661,7 +690,10 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 121
+  Marketplace {
+    Description: "blah"
+  }
+  SerializationVersion: 123
   DirectlyPublished: true
   VirtualFolderPath: "UI Button"
 }

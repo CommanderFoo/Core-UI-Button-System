@@ -172,6 +172,12 @@ Objects {
           Rotator {
           }
         }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:middlecenter"
+          }
+        }
       }
     }
     ParameterOverrideMap {

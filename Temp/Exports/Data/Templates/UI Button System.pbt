@@ -739,6 +739,6 @@ Assets {
     OwnerName: "CommanderFoo"
     Description: "blah"
   }
-  SerializationVersion: 118
+  SerializationVersion: 123
 }
 IncludesAllDependencies: true

@@ -12,7 +12,11 @@ local Tween = require(TWEEN)
 local UI_Button = require(script:GetCustomProperty("UI_Button"))
 
 local BUTTON = script.parent
-local GROW_AMOUNT = BUTTON:GetCustomProperty("GrowAmount")
+local ANIMATE = BUTTON:GetCustomProperty("Animate")
+local GROW_SIZE = BUTTON:GetCustomProperty("GrowSize")
+local EASING = BUTTON:GetCustomProperty("Easing")
+local ANIMATION_TIME_IN = BUTTON:GetCustomProperty("AnimationTimeIn")
+local ANIMATION_TIME_OUT = BUTTON:GetCustomProperty("AnimationTimeOut")
 
 local BUTTON_IMAGE = BUTTON:GetCustomProperty("ButtonImage"):WaitForObject()
 local PRESSED_IMAGE = BUTTON:GetCustomProperty("PressedImage"):WaitForObject()
@@ -25,9 +29,13 @@ local button_height = BUTTON.height
 local button_color = BUTTON_TEXT:GetColor()
 
 local function shrink()
+	if(not ANIMATE) then
+		return
+	end
+
 	tween = nil
 
-	tween = Tween:new(.2, { w = BUTTON.width, h = BUTTON.height }, { w = button_width, h = button_height })
+	tween = Tween:new(ANIMATION_TIME_OUT, { w = BUTTON.width, h = BUTTON.height }, { w = button_width, h = button_height })
 	tween:on_change(function(c)
 		BUTTON.width = math.floor(c.w)
 		BUTTON.height = math.floor(c.h)
@@ -43,7 +51,11 @@ local opts = {
 	active = false,
 
 	hovered = function(obj)
-		tween = Tween:new(.8, { w = obj.button.width, h = obj.button.height }, { w = button_width + GROW_AMOUNT, h = button_height + GROW_AMOUNT })
+		if(not ANIMATE) then
+			return
+		end
+
+		tween = Tween:new(ANIMATION_TIME_IN, { w = obj.button.width, h = obj.button.height }, { w = button_width + GROW_SIZE, h = button_height + GROW_SIZE })
 		tween:on_change(function(c)
 			BUTTON.width = math.floor(c.w)
 			BUTTON.height = math.floor(c.h)
@@ -53,7 +65,7 @@ local opts = {
 			tween = nil
 		end)
 
-		tween:set_easing(Tween.Easings.Out_Elastic)
+		tween:set_easing(Tween.Easings[EASING])
 	end,
 
 	unhovered = function(obj)
@@ -79,8 +91,8 @@ Events.Connect("UI.Button.Active." .. BUTTON.id, function(button)
 	BUTTON_IMAGE.visibility = Visibility.FORCE_OFF
 	PRESSED_IMAGE.visibility = Visibility.FORCE_ON
 	BUTTON_TEXT:SetColor(PRESSED_TEXT_COLOR)
-	BUTTON.width = button_width + GROW_AMOUNT
-	BUTTON.height = button_height + GROW_AMOUNT
+	BUTTON.width = button_width + GROW_SIZE
+	BUTTON.height = button_height + GROW_SIZE
 	opts.active = true
 end)
 
