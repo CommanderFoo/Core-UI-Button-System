@@ -50,6 +50,7 @@ Objects {
   }
   ParentId: 4781671109827199097
   ChildIds: 15890731679625016125
+  ChildIds: 8285540364905331562
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -68,6 +69,43 @@ Objects {
     }
     MaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 8285540364905331562
+  Name: "Cursor"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13838723239703499137
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9636093454189626720
     }
   }
   NetworkRelevanceDistance {
@@ -170,23 +208,6 @@ Objects {
         Overrides {
           Name: "Rotation"
           Rotator {
-          }
-        }
-        Overrides {
-          Name: "Dock"
-          Enum {
-            Value: "mc:euianchor:middlecenter"
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 14475387559359828896
-      value {
-        Overrides {
-          Name: "cs:Tween"
-          AssetReference {
-            Id: 5010859578220487614
           }
         }
       }

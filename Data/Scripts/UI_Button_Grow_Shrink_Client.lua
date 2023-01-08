@@ -23,6 +23,8 @@ local PRESSED_IMAGE = BUTTON:GetCustomProperty("PressedImage"):WaitForObject()
 local BUTTON_TEXT = BUTTON:GetCustomProperty("ButtonText"):WaitForObject()
 local PRESSED_TEXT_COLOR = BUTTON:GetCustomProperty("PressedTextColor")
 
+local DISABLED = BUTTON:GetCustomProperty("Disabled")
+
 local tween = nil
 local button_width = BUTTON.width
 local button_height = BUTTON.height
@@ -78,7 +80,11 @@ local opts = {
 
 }
 
-UI_Button.setup(script, opts)
+local ui_button = UI_Button.setup(script, opts)
+
+if(DISABLED) then
+	ui_button.disable()
+end
 
 function Tick(dt)
 	if(tween ~= nil) then
@@ -103,4 +109,16 @@ Events.Connect("UI.Button.Reset." .. BUTTON.id, function()
 	opts.active = false
 	
 	shrink()
+end)
+
+Events.Connect("UI.Button.Disable." .. BUTTON.id, function()
+	if(ui_button ~= nil) then
+		ui_button.disable()
+	end
+end)
+
+Events.Connect("UI.Button.Enable" .. BUTTON.id, function()
+	if(ui_button ~= nil) then
+		ui_button.enable()
+	end
 end)

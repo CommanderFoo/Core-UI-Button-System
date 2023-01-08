@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8439019164340972673
+        ParentId: 15890731679625016125
         ChildIds: 4954124357189605708
         ChildIds: 12694488258904602806
         ChildIds: 13605223797867136028
@@ -23,6 +23,10 @@ Assets {
         ChildIds: 11359641501298423512
         ChildIds: 14475387559359828896
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:Disabled"
+            Bool: true
+          }
           Overrides {
             Name: "cs:ButtonImage"
             ObjectReference {
@@ -187,6 +191,10 @@ Assets {
             Name: "cs:AnimationTimeOut:subcategory"
             String: "Animation"
           }
+          Overrides {
+            Name: "cs:Disabled:subcategory"
+            String: "Misc"
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -268,7 +276,7 @@ Assets {
             }
             TargetAnchor {
               Anchor {
-                Value: "mc:euianchor:topcenter"
+                Value: "mc:euianchor:middlecenter"
               }
             }
           }
