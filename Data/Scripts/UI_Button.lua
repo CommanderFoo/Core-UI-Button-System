@@ -12,7 +12,7 @@ local UI_Button = {
 ---@param d CoreObject
 function UI_Button.flip_visbility(a, b, c, d)
 	if(Object.IsValid(a)) then
-		a.visibility = Visibility.FORCE_ON
+		a.visibility = Visibility.INHERIT
 	end
 
 	if(Object.IsValid(b)) then

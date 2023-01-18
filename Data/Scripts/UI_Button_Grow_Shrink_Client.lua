@@ -95,7 +95,7 @@ end
 Events.Connect("UI.Button.Active." .. BUTTON.id, function(button)
 	UI_Button.toggle_active(button)
 	BUTTON_IMAGE.visibility = Visibility.FORCE_OFF
-	PRESSED_IMAGE.visibility = Visibility.FORCE_ON
+	PRESSED_IMAGE.visibility = Visibility.INHERIT
 	BUTTON_TEXT:SetColor(PRESSED_TEXT_COLOR)
 	BUTTON.width = button_width + GROW_SIZE
 	BUTTON.height = button_height + GROW_SIZE
@@ -103,7 +103,7 @@ Events.Connect("UI.Button.Active." .. BUTTON.id, function(button)
 end)
 
 Events.Connect("UI.Button.Reset." .. BUTTON.id, function()
-	BUTTON_IMAGE.visibility= Visibility.FORCE_ON
+	BUTTON_IMAGE.visibility= Visibility.INHERIT
 	PRESSED_IMAGE.visibility = Visibility.FORCE_OFF
 	BUTTON_TEXT:SetColor(button_color)
 	opts.active = false
@@ -117,7 +117,7 @@ Events.Connect("UI.Button.Disable." .. BUTTON.id, function()
 	end
 end)
 
-Events.Connect("UI.Button.Enable" .. BUTTON.id, function()
+Events.Connect("UI.Button.Enable." .. BUTTON.id, function()
 	if(ui_button ~= nil) then
 		ui_button.enable()
 	end
